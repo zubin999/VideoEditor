@@ -5,7 +5,8 @@ import {
   EditPen,
   ArrowLeftBold,
   ArrowRightBold,
-  DeleteFilled
+  DeleteFilled,
+  Scissor
 } from '@element-plus/icons-vue'
 import type { MenuItem } from '../types/resources'
 
@@ -42,6 +43,11 @@ const trackHeaderMenu: MenuItem[] = [
     icon: ArrowRightBold,
     type: 'redo',
     title: '重做'
+  },
+  {
+    icon: Scissor,
+    type: 'split',
+    title: '分割'
   },
   {
     icon: DeleteFilled,

@@ -44,15 +44,20 @@ function operation(type: string) {
     historyStore.redo()
   } else if (type === 'undo') {
     historyStore.undo()
-  } else if (type === 'delete') {
+  } else {
     const focusedItemIdx = trackStore.focusedItemIdx
     if (focusedItemIdx === undefined) return
-    trackStore.focusedItem = undefined
-    trackStore.removeTrackItem(
-      focusedItemIdx.lineIdx,
-      focusedItemIdx.itemIdx,
-      true
-    )
+    
+    if (type === 'delete') {
+      trackStore.focusedItem = undefined
+      trackStore.removeTrackItem(
+        focusedItemIdx.lineIdx,
+        focusedItemIdx.itemIdx,
+        true
+      )
+    }else if (type === 'split') {
+      
+    }
   }
 }
 </script>
